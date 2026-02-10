@@ -1,4 +1,4 @@
-package Classes;
+package Exercicio_1;
 
 public class Aluno {
     protected String nome;

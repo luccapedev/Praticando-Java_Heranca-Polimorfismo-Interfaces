@@ -1,5 +1,7 @@
-import Classes.Aluno;
-import Classes.Bolsista;
+import Exercicio_1.Aluno;
+import Exercicio_1.Bolsista;
+import Exercicio_2.Docente;
+import Exercicio_2.Estudante;
 
 import java.util.Scanner;
 
@@ -48,7 +50,51 @@ public class Main {
                     aluno2.identificar();
                     break;
                 case 2:
-                    System.out.println("Essa funcionalidade não existe ainda!");
+                    String disciplina;
+                    int idade;
+                    double nota;
+
+                    scanner.nextLine();
+                    System.out.println("Digite o nome do primeiro aluno: ");
+                    nome = scanner.nextLine();
+                    System.out.println("Digite a idade do primeiro aluno: ");
+                    idade = scanner.nextInt();
+                    System.out.println("Digite a nota do primeiro aluno: ");
+                    nota = scanner.nextDouble();
+                    Estudante estudante1 = new Estudante(nome,idade,nota);
+
+                    scanner.nextLine();
+                    System.out.println("Digite o nome do segundo aluno: ");
+                    nome = scanner.nextLine();
+                    System.out.println("Digite a idade do segundo aluno: ");
+                    idade = scanner.nextInt();
+                    System.out.println("Digite a nota do segundo aluno: ");
+                    nota = scanner.nextDouble();
+                    Estudante estudante2 = new Estudante(nome,idade,nota);
+
+                    scanner.nextLine();
+                    System.out.println("Digite o nome do primeiro docente: ");
+                    nome = scanner.nextLine();
+                    System.out.println("Digite a idade do primeiro docente: ");
+                    idade = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Digite a disciplina do primeiro docente: ");
+                    disciplina = scanner.nextLine();
+                    Docente docente1 = new Docente(nome,idade,disciplina);
+
+                    System.out.println("Digite o nome do segundo docente: ");
+                    nome = scanner.nextLine();
+                    System.out.println("Digite a idade do segundo docente: ");
+                    idade = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Digite a disciplina do segundo docente: ");
+                    disciplina = scanner.nextLine();
+                    Docente docente2 = new Docente(nome,idade,disciplina);
+
+                    estudante1.exibirDados();
+                    estudante2.exibirDados();
+                    docente1.exibirDados();
+                    docente2.exibirDados();
                     break;
                 case 3:
                     System.out.println("Essa funcionalidade não existe ainda!");
