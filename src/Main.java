@@ -2,6 +2,9 @@ import Exercicio_1.Aluno;
 import Exercicio_1.Bolsista;
 import Exercicio_2.Docente;
 import Exercicio_2.Estudante;
+import Exercicio_3.Ebook;
+import Exercicio_3.Livro;
+import Exercicio_3.Revista;
 
 import java.util.Scanner;
 
@@ -97,8 +100,51 @@ public class Main {
                     docente2.exibirDados();
                     break;
                 case 3:
-                    System.out.println("Essa funcionalidade não existe ainda!");
+                    String titulo;
+                    int ano;
+
+                    scanner.nextLine();
+                    System.out.println("Digite o nome do livro: ");
+                    titulo = scanner.nextLine();
+
+                    System.out.println("Digite o ano de publicação do livro: ");
+                    ano = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Digite o autor do livro: ");
+                    String autor = scanner.nextLine();
+                    Livro livro = new Livro(titulo, ano, autor);
+
+
+                    System.out.println("Digite o nome do ebook: ");
+                    titulo = scanner.nextLine();
+
+                    System.out.println("Digite o ano de publicação do ebook: ");
+                    ano = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Digite o formato do ebook: ");
+                    String formato = scanner.nextLine();
+                    Ebook ebook = new Ebook(titulo, ano, formato);
+
+
+                    System.out.println("Digite o nome da revista: ");
+                    titulo = scanner.nextLine();
+
+                    System.out.println("Digite o ano de publicação da revista: ");
+                    ano = scanner.nextInt();
+
+                    System.out.println("Digite a edição da revista: ");
+                    int edicao = scanner.nextInt();
+                    scanner.nextLine();
+
+                    Revista revista = new Revista(titulo, ano, edicao);
+
+                    livro.exibirInfo();
+                    ebook.exibirInfo();
+                    revista.exibirInfo();
                     break;
+
                 case 4:
                     System.out.println("Essa funcionalidade não existe ainda!");
                     break;
