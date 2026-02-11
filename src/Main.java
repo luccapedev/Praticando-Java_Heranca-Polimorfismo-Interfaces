@@ -14,6 +14,8 @@ import Exercicio_5.Cartao;
 import Exercicio_5.Pagamento;
 import Exercicio_5.Pix;
 import Exercicio_6.Mensagem;
+import Exercicio_7.Reserva;
+import Exercicio_7.ReservaVip;
 
 import java.util.Scanner;
 
@@ -212,9 +214,10 @@ public class Main {
                     pix.confirmarPagamento();
                     break;
                 case 6:
-                    String msg;
-                    Mensagem mensagem1 = new Mensagem();
                     scanner.nextLine();
+                    Mensagem mensagem1 = new Mensagem();
+                    String msg;
+
                     System.out.println("Deseja enviar uma mensagem direta?");
                     String confirma = scanner.nextLine();
                     if (confirma.equalsIgnoreCase("Sim")) {
@@ -233,7 +236,35 @@ public class Main {
                     }
                     break;
                 case 7:
-                    System.out.println("Essa funcionalidade não existe ainda!");
+                    scanner.nextLine();
+                    Reserva reserva = new Reserva();
+                    ReservaVip reservaVip = new ReservaVip();
+                    String data;
+                    int quantidadePessoas;
+
+                    System.out.println("Se trata de uma reserva VIP? (true/false)");
+                    boolean isVip = scanner.nextBoolean();
+
+                    if (isVip) {
+                        reservaVip.reservar();
+                    } else {
+                        scanner.nextLine();
+                        System.out.println("Digite a data da reserva: ");
+                        data= scanner.nextLine();
+
+                        System.out.println("Digite a quantidade de pessoas: ");
+                        quantidadePessoas= scanner.nextInt();
+
+                        if (!data.isEmpty()) {
+                            if (quantidadePessoas > 0) {
+                                reserva.reservar(data, quantidadePessoas);
+                            } else {
+                                reserva.reservar(data);
+                            }
+                        } else {
+                            reserva.reservar();
+                        }
+                    }
                     break;
                 case 8:
                     System.out.println("Essa funcionalidade não existe ainda!");
