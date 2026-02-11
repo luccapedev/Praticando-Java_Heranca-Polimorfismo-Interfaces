@@ -16,6 +16,7 @@ import Exercicio_5.Pix;
 import Exercicio_6.Mensagem;
 import Exercicio_7.Reserva;
 import Exercicio_7.ReservaVip;
+import Exercicio_8.Relatorio;
 
 import java.util.Scanner;
 
@@ -267,7 +268,15 @@ public class Main {
                     }
                     break;
                 case 8:
-                    System.out.println("Essa funcionalidade não existe ainda!");
+                    scanner.nextLine();
+                    System.out.println("Digite o título do relatório: ");
+                    String tituloRelatorio = scanner.nextLine();
+
+                    System.out.println("Digite o conteúdo do relatório: ");
+                    String conteudoRelatorio = scanner.nextLine();
+
+                    Relatorio relatorio = new Relatorio(tituloRelatorio, conteudoRelatorio);
+                    relatorio.imprimir();
                     break;
                 case 9:
                     System.out.println("Essa funcionalidade não existe ainda!");
