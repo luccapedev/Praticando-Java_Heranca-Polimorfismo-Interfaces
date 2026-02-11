@@ -1,5 +1,7 @@
 import Exercicio_1.Aluno;
 import Exercicio_1.Bolsista;
+import Exercicio_10.ArCondicionado;
+import Exercicio_10.Luz;
 import Exercicio_2.Docente;
 import Exercicio_2.Estudante;
 import Exercicio_3.Ebook;
@@ -294,7 +296,19 @@ public class Main {
                     sacar.executar();
                     break;
                 case 10:
-                    System.out.println("Essa funcionalidade não existe ainda!");
+                    scanner.nextLine();
+                    Luz luz = new Luz();
+                    ArCondicionado arCondicionado = new ArCondicionado();
+
+                    luz.ligar();
+                    luz.ligar();
+                    luz.desligar();
+                    luz.desligar();
+
+                    arCondicionado.ligar();
+                    arCondicionado.ligar();
+                    arCondicionado.desligar();
+                    arCondicionado.desligar();
                     break;
                 case 0:
                     System.out.println("Saindo do programa...");
