@@ -6,12 +6,14 @@ import Exercicio_3.Ebook;
 import Exercicio_3.Livro;
 import Exercicio_3.Revista;
 import Exercicio_4.Email;
+import Exercicio_4.Notificacao;
 import Exercicio_4.Push;
 import Exercicio_4.SMS;
 import Exercicio_5.Boleto;
 import Exercicio_5.Cartao;
 import Exercicio_5.Pagamento;
 import Exercicio_5.Pix;
+import Exercicio_6.Mensagem;
 
 import java.util.Scanner;
 
@@ -210,7 +212,25 @@ public class Main {
                     pix.confirmarPagamento();
                     break;
                 case 6:
-                    System.out.println("Essa funcionalidade não existe ainda!");
+                    String msg;
+                    Mensagem mensagem1 = new Mensagem();
+                    scanner.nextLine();
+                    System.out.println("Deseja enviar uma mensagem direta?");
+                    String confirma = scanner.nextLine();
+                    if (confirma.equalsIgnoreCase("Sim")) {
+                        System.out.println("Digite o nome do contato: ");
+                        String contato = scanner.nextLine();
+
+                        System.out.println("Digite a mensagem: ");
+                        msg = scanner.nextLine();
+
+                        mensagem1.enviarMensagem(contato, msg);
+                    } else {
+                        System.out.println("Digite a mensagem: ");
+                        msg = scanner.nextLine();
+
+                        mensagem1.enviarMensagem(msg);
+                    }
                     break;
                 case 7:
                     System.out.println("Essa funcionalidade não existe ainda!");
