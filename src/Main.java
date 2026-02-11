@@ -5,6 +5,9 @@ import Exercicio_2.Estudante;
 import Exercicio_3.Ebook;
 import Exercicio_3.Livro;
 import Exercicio_3.Revista;
+import Exercicio_4.Email;
+import Exercicio_4.Push;
+import Exercicio_4.SMS;
 
 import java.util.Scanner;
 
@@ -144,9 +147,44 @@ public class Main {
                     ebook.exibirInfo();
                     revista.exibirInfo();
                     break;
-
                 case 4:
-                    System.out.println("Essa funcionalidade não existe ainda!");
+                    String destinatario;
+                    String mensagem;
+
+                    scanner.nextLine();
+                    System.out.println("Digite o email do destinatário: ");
+                    destinatario = scanner.nextLine();
+
+                    System.out.println("Digite o assunto do email: ");
+                    String assunto = scanner.nextLine();
+
+                    System.out.println("Digite o corpo do email: ");
+                    mensagem = scanner.nextLine();
+
+                    Email email = new Email(destinatario, assunto, mensagem);
+
+                    System.out.println("Digite o número do destinatário: ");
+                    destinatario = scanner.nextLine();
+
+                    System.out.println("Digite a mensagem do SMS: ");
+                    mensagem = scanner.nextLine();
+
+                    SMS sms = new SMS(destinatario, assunto);
+
+                    System.out.println("Digite o usuário do destinatário: ");
+                    destinatario = scanner.nextLine();
+
+                    System.out.println("Digite o título do push:");
+                    String tituloPush = scanner.nextLine();
+
+                    System.out.println("Digite o conteúdo do push: ");
+                    mensagem = scanner.nextLine();
+
+                    Push push = new Push(destinatario, tituloPush, mensagem);
+
+                    email.enviar();
+                    sms.enviar();
+                    push.enviar();
                     break;
                 case 5:
                     System.out.println("Essa funcionalidade não existe ainda!");
