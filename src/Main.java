@@ -8,6 +8,10 @@ import Exercicio_3.Revista;
 import Exercicio_4.Email;
 import Exercicio_4.Push;
 import Exercicio_4.SMS;
+import Exercicio_5.Boleto;
+import Exercicio_5.Cartao;
+import Exercicio_5.Pagamento;
+import Exercicio_5.Pix;
 
 import java.util.Scanner;
 
@@ -187,7 +191,23 @@ public class Main {
                     push.enviar();
                     break;
                 case 5:
-                    System.out.println("Essa funcionalidade não existe ainda!");
+                    double valor;
+                    scanner.nextLine();
+                    System.out.println("Qual o valor do pagamento no cartão de crédito?");
+                    valor = scanner.nextDouble();
+                    Pagamento cartao = new Cartao(valor);
+
+                    System.out.println("Qual o valor do pagamento no boleto?");
+                    valor = scanner.nextDouble();
+                    Pagamento boleto = new Boleto(valor);
+
+                    System.out.println("Qual o valor do pagamento no pix?");
+                    valor = scanner.nextDouble();
+                    Pagamento pix = new Pix(valor);
+
+                    cartao.confirmarPagamento();
+                    boleto.confirmarPagamento();
+                    pix.confirmarPagamento();
                     break;
                 case 6:
                     System.out.println("Essa funcionalidade não existe ainda!");
