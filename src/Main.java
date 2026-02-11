@@ -6,7 +6,6 @@ import Exercicio_3.Ebook;
 import Exercicio_3.Livro;
 import Exercicio_3.Revista;
 import Exercicio_4.Email;
-import Exercicio_4.Notificacao;
 import Exercicio_4.Push;
 import Exercicio_4.SMS;
 import Exercicio_5.Boleto;
@@ -17,6 +16,9 @@ import Exercicio_6.Mensagem;
 import Exercicio_7.Reserva;
 import Exercicio_7.ReservaVip;
 import Exercicio_8.Relatorio;
+import Exercicio_9.Deposito;
+import Exercicio_9.OperacaoBancaria;
+import Exercicio_9.Saque;
 
 import java.util.Scanner;
 
@@ -279,7 +281,17 @@ public class Main {
                     relatorio.imprimir();
                     break;
                 case 9:
-                    System.out.println("Essa funcionalidade não existe ainda!");
+                    scanner.nextLine();
+                    double valorOperacao;
+                    System.out.println("Digite o valor que deseja depositar:");
+                    valorOperacao = scanner.nextDouble();
+                    OperacaoBancaria deposito = new Deposito(valorOperacao);
+                    deposito.executar();
+
+                    System.out.println("Digite o valor que deseja sacar:");
+                    valorOperacao = scanner.nextDouble();
+                    OperacaoBancaria sacar = new Saque(valorOperacao);
+                    sacar.executar();
                     break;
                 case 10:
                     System.out.println("Essa funcionalidade não existe ainda!");
