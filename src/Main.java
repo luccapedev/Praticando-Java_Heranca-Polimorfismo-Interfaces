@@ -169,7 +169,7 @@ public class Main {
                     System.out.println("Digite a mensagem do SMS: ");
                     mensagem = scanner.nextLine();
 
-                    SMS sms = new SMS(destinatario, assunto);
+                    SMS sms = new SMS(destinatario, mensagem);
 
                     System.out.println("Digite o usuário do destinatário: ");
                     destinatario = scanner.nextLine();
@@ -180,7 +180,7 @@ public class Main {
                     System.out.println("Digite o conteúdo do push: ");
                     mensagem = scanner.nextLine();
 
-                    Push push = new Push(destinatario, tituloPush, mensagem);
+                    Push push = new Push(destinatario, mensagem, tituloPush);
 
                     email.enviar();
                     sms.enviar();
